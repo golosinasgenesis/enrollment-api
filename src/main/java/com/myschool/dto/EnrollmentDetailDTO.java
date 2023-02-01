@@ -27,5 +27,5 @@ public class EnrollmentDetailDTO {
     @NotNull
     @NotEmpty
     @Size(min = 3, max = 5)
-    private String classroom;
+        private String classroom;
 }

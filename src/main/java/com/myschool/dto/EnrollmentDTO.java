@@ -22,7 +22,7 @@ public class EnrollmentDTO {
     private Long idEnrollment;
 
     @NotNull
-    @JsonIncludeProperties(value = {"idStudent"})
+    @JsonIncludeProperties(value = {"id", "nameStudent"})
     private StudentDTO student;
 
     @NotNull

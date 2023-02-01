@@ -1,5 +1,6 @@
 package com.myschool.exception;
 
+
 //import io.jsonwebtoken.ExpiredJwtException;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
@@ -17,7 +18,8 @@ import java.sql.SQLException;
 import java.time.LocalDateTime;
 import java.util.stream.Collectors;
 
-public class GlobalErrorHandler extends ResponseEntityExceptionHandler{
+@ControllerAdvice
+public class GlobalErrorHandler extends ResponseEntityExceptionHandler {
 
     @ExceptionHandler(Exception.class)
     public ResponseEntity<ErrorResponse> handleAllException(Exception ex, WebRequest req){
@@ -59,5 +61,4 @@ public class GlobalErrorHandler extends ResponseEntityExceptionHandler{
         return new ResponseEntity<>(res, HttpStatus.BAD_REQUEST);
 
     }
-
 }

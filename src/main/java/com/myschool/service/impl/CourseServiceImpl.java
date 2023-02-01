@@ -31,7 +31,7 @@ public class CourseServiceImpl implements CourseService {
 
     @Override
     public Course readById(Long id) throws Exception {
-        return courseRepository.findById(id).orElse(new Course());
+        return courseRepository.findById(id).orElse(null);
     }
 
     @Override
