@@ -33,6 +33,13 @@ public class StudentController {
         return new ResponseEntity<>(list, HttpStatus.OK);
     }
 
+    //STUDENTS ORDER BY AGE DESC
+    @GetMapping("/orderage")
+    public ResponseEntity<List<StudentDTO>> readStudentsAgeOrderDesc() throws Exception{
+        List<StudentDTO> list = service.getStudentsAgeOrderDesc().stream().map(cat -> mapper.map(cat, StudentDTO.class)).collect(Collectors.toList());
+        return new ResponseEntity<>(list, HttpStatus.OK);
+    }
+
     @GetMapping("/{id}")
     public ResponseEntity<StudentDTO> readById(@PathVariable("id") Long id) throws Exception{
         Student obj = service.readById(id);

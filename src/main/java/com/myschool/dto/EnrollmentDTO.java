@@ -8,6 +8,8 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import javax.validation.Valid;
+import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 import java.time.LocalDateTime;
 import java.util.List;
@@ -31,7 +33,9 @@ public class EnrollmentDTO {
     @NotNull
     private boolean state;
 
+    @Valid
     @NotNull
+    @NotEmpty
     @JsonManagedReference
     private List<EnrollmentDetailDTO> details;
 
